@@ -6,3 +6,9 @@
   <li><%= cat.name %></li>
 <% end %>
 </ul>
+
+<ul>
+<% @post.comments.each do |com| %>
+  <li><%= com.name %></li>
+<% end %>
+</ul>
