@@ -23,12 +23,16 @@
 <h3>Add a new comment:</h3>
 
 <%= form_for Comment.new do |comment| %>
+
   <%= comment.hidden_field :post_id, :value => @post.id %>
   Comment: <%=comment.text_field :content %><br>
+
   <%=comment.collection_select :user_id, User.all, :id, :username %>
+
   <%= comment.fields_for :user, User.new do |user| %>
     <%= user.text_field :username %>
   <% end %>
+
   <br>
   <%= comment.submit %>
 <% end %>
